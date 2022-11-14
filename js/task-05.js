@@ -11,6 +11,8 @@ const handleInput = (event) => {
 
     if (itIsName) {
         personName.textContent = itIsName;
+    } else {
+        personName.textContent = "Anonymous!";
     }
 };
 

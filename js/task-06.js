@@ -1,18 +1,21 @@
 const handleInput = document.querySelector("#validation-input");
-console.log(handleInput);
+// console.log(handleInput);
 
-const handleInputBlur = function a(event) {
+const handleInputBlur = function (event) {
   const userText = handleInput.value.length;
 
-  const minUserText = Number(handleInput.dataset.length); //6
+  const minUserText = +(handleInput.dataset.length); //6
+
+  function multiply(x, y) {
+    handleInput.classList.add(x);
+    handleInput.classList.remove(y);
+  }
 
   if (userText >= minUserText) {
-    handleInput.classList.add("valid");
-    handleInput.classList.remove("invalid");
+    multiply("valid", "invalid");
     console.log("OK");
   } else {
-    handleInput.classList.remove("valid");
-    handleInput.classList.add("invalid");
+    multiply("invalid", "valid");
     console.log("not OK");
   }
 };
